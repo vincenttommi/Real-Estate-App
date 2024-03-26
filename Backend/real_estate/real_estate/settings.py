@@ -29,6 +29,8 @@ INSTALLED_APPS = [
      'corsheaders',
      'rest_framework',
      'accounts',
+     'realtors',
+     'listings'
         
 ]
 
@@ -123,7 +125,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
-MEDIA_URL = '/media'
+MEDIA_URL = '/media/'
 MEDIA_ROOT  = os.path.join(BASE_DIR,'media')
 #folder where photos will be posted 
 
@@ -135,5 +137,17 @@ REST_FRAMEWORK ={
         'rest_framework.permissions.IsAuthenticated'
         
     ],
+    'DEFAULT_AUTHENTICATION_CLASSES':[
+        'rest_framework_simplejwt.authentication.JWTAuthentication'
+    ],
+    'DEFAULT_PAGINATION_CLASS':'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE':3
     
 }
+
+
+CORS_ORIGIN_ALLOW_ALL = True
+
+FILE_UPLOAD_PERMISSIONS = 0o640
+
+AUTH_USER_MODEL  = 'accounts.UserAccount'
