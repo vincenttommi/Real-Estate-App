@@ -14,7 +14,12 @@ class ContactCreateView(APIView):
         try:
             send_mail(
                 data['subject'],
-                'Name:' + data['name'] + '\nEmail:' + data['email'] + '\n\nMessage:\n' + data['message'],
+                'Name:' 
+                + data['name'] 
+                + '\nEmail:'
+                + data['email'] 
+                + '\n\nMessage:\n' 
+                + data['message'],
                 'tommivincent3@gmail.com',
                 ['tommivincent3@gmail.com'],
                 fail_silently=False
