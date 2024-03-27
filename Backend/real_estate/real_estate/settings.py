@@ -28,9 +28,11 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
      'corsheaders',
      'rest_framework',
+     'listings',
      'accounts',
      'realtors',
-     'listings'
+     'contacts'
+     
         
 ]
 
@@ -79,6 +81,14 @@ DATABASES = {
         'PORT': '5432',
     }
 }
+
+
+EMAIL_BACKEND = 'django.core.email.backends.smtp.EmailBackend'
+EMAIL_HOST = ' smtp.gmail.com'
+EMAIL_PORT  = 587
+EMAIL_HOST_USER  = 'tommivincent3@gmail.com'
+EMAIL_HOST_PASSWORD  = 'tetv sgts cbdz fako'
+EMAIL_USE_TLS  = True
 
 
 # Password validation
