@@ -10,6 +10,8 @@ import Login from './containers/Login'
 import SignUp from './containers/SignUp'
 import NoteFound from './components/NoteFound'
 
+import   './sass/main.scss';
+
 
 const App = () => {
   return (
